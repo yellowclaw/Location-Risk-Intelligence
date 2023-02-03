@@ -1,0 +1,159 @@
+{
+  "root": true,
+  "ignorePatterns": [
+    "projects/**/*"
+  ],
+  "overrides": [
+    {
+      "files": [
+        "*.ts"
+      ],
+      "plugins": ["import"],
+      "extends": [
+        "eslint:recommended",
+        "plugin:@typescript-eslint/recommended",
+        "plugin:@angular-eslint/recommended",
+        "plugin:@angular-eslint/template/process-inline-templates"
+      ],
+      "rules": {
+        "@typescript-eslint/no-explicit-any": "warn",
+        "@angular-eslint/directive-selector": [
+          "error",
+          {
+            "type": "attribute",
+            "prefix": "app",
+            "style": "camelCase"
+          }
+        ],
+        "@angular-eslint/component-selector": [
+          "error",
+          {
+            "type": "element",
+            "prefix": "app",
+            "style": "kebab-case"
+          }
+        ],
+        "@typescript-eslint/no-unused-expressions": [
+          "error",
+          {
+            "allowTernary": true
+          }
+        ],
+        "no-unused-vars": [
+          "error",
+          {
+            "vars": "all",
+            "args": "after-used",
+            "ignoreRestSiblings": false
+          }
+        ],
+        "comma-dangle": [
+          "error",
+          "never"
+        ],
+        "@typescript-eslint/ban-types": [
+          "error",
+          {
+            "extendDefaults": true,
+            "types": {
+              "{}": false
+            }
+          }
+        ],
+        "@typescript-eslint/naming-convention": [
+          "error",
+          {
+            "selector": "enum",
+            "format": [
+              "camelCase",
+              "UPPER_CASE",
+              "PascalCase"
+            ]
+          }
+        ],
+        "@typescript-eslint/consistent-type-definitions": "error",
+        "import/order": "error",
+        "indent": [
+          "error",
+          2,
+          {
+            "SwitchCase": 1,
+            "MemberExpression": 1,
+            "FunctionDeclaration": {
+              "body": 1,
+              "parameters": 2
+            }
+          }
+        ],
+        "key-spacing": [
+          "error",
+          {
+            "afterColon": true
+          }
+        ],
+        "keyword-spacing": [
+          "error",
+          {
+            "after": true
+          }
+        ],
+        "space-infix-ops": "error",
+        "comma-spacing": [
+          2,
+          {
+            "before": false,
+            "after": true
+          }
+        ],
+        "no-multiple-empty-lines": [
+          2,
+          {
+            "max": 1,
+            "maxEOF": 0
+          }
+        ],
+        "eol-last": [
+          "error",
+          "always"
+        ],
+        "object-curly-spacing": [
+          "error",
+          "always"
+        ],
+        "space-before-blocks": 2,
+        "padding-line-between-statements": [
+          "error",
+          {
+            "blankLine": "always",
+            "prev": "*",
+            "next": "block"
+          },
+          {
+            "blankLine": "always",
+            "prev": "block",
+            "next": "*"
+          },
+          {
+            "blankLine": "always",
+            "prev": "*",
+            "next": "block-like"
+          },
+          {
+            "blankLine": "always",
+            "prev": "block-like",
+            "next": "*"
+          }
+        ]
+      }
+    },
+    {
+      "files": [
+        "*.html"
+      ],
+      "extends": [
+        "plugin:@angular-eslint/template/recommended"
+      ],
+      "rules": {}
+    }
+  ]
+}
